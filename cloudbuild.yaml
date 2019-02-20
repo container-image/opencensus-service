@@ -1,0 +1,35 @@
+steps:
+  - name: gcr.io/cloud-builders/docker:18.09.0
+    args:
+      - image
+      - build
+      - --pull
+      - --build-arg
+      - GOLANG_VERSION=1.12rc1
+      - --build-arg
+      - ALPINE_VERSION=3.9
+      - --target
+      - ocagent
+      - -t
+      - gcr.io/$PROJECT_ID/ocagent:latest
+      - docker/ocagent
+  - name: gcr.io/cloud-builders/docker:18.09.0
+    args:
+      - image
+      - build
+      - --pull
+      - --build-arg
+      - GOLANG_VERSION=1.12rc1
+      - --build-arg
+      - ALPINE_VERSION=3.9
+      - --target
+      - occollector
+      - -t
+      - gcr.io/$PROJECT_ID/occollector:latest
+      - docker/occollector
+
+images:
+  - gcr.io/$PROJECT_ID/ocagent:latest
+  - gcr.io/$PROJECT_ID/occollector:latest
+
+timeout: 600s
