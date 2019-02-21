@@ -1,8 +1,7 @@
 ARG GOLANG_VERSION
 ARG ALPINE_VERSION
 FROM docker.io/golang:${GOLANG_VERSION}-alpine${ALPINE_VERSION} AS occollector-builder
-ENV GO111MODULE=on \
-	OUTDIR=/out
+ENV OUTDIR=/out
 RUN set -eux && \
 	apk add --no-cache \
 		ca-certificates \
