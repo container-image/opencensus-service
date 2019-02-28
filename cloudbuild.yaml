@@ -5,9 +5,9 @@ steps:
       - build
       - --pull
       - --build-arg
-      - GOLANG_VERSION=1.11
+      - GOLANG_VERSION=1.12
       - --build-arg
-      - ALPINE_VERSION=3.8
+      - ALPINE_VERSION=3.9
       - --target
       - ocagent
       - -t
@@ -19,9 +19,9 @@ steps:
       - build
       - --pull
       - --build-arg
-      - GOLANG_VERSION=1.11
+      - GOLANG_VERSION=1.12
       - --build-arg
-      - ALPINE_VERSION=3.8
+      - ALPINE_VERSION=3.9
       - --target
       - occollector
       - -t
