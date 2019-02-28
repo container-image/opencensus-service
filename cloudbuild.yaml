@@ -32,4 +32,4 @@ images:
   - gcr.io/$PROJECT_ID/ocagent:latest
   - gcr.io/$PROJECT_ID/occollector:latest
 
-timeout: 600s
+timeout: 3600s
